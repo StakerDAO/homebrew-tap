@@ -9,12 +9,11 @@ class StkrTokenCli < Formula
 
   head "https://github.com/serokell/staker-dao.git", :branch => "master"
   
-  # TODO Update bottle
   bottle do
-    root_url "https://dl.bintray.com/michaeljklein/bottles-tq/"
-    cellar :any_skip_relocation
-    sha256 "76e959f1de7f507014be7b93d00a1985a6ed26c06d934e151b26c033bdcbe40c" => :mojave
-    sha256 "cc14e6c6b356073a2da22c66882e6951f84394211152f2b5b5c584e6ecb63284" => :x86_64_linux
+    root_url "https://gpevnev-org.bintray.com/bottles-stakerdao"
+    cellar :any
+    rebuild 1
+    sha256 "48fb670f03c629a6f10a5288d3a5a9498a4149893881da0d2f2e9901979ebe5e" => :catalina
   end
 
   resource "mac-stack" do
