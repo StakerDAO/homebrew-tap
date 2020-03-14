@@ -1,4 +1,4 @@
-class Tezos < Formula
+class TezosClientPatched < Formula
   @all_bins = []
 
   class << self
@@ -17,17 +17,15 @@ class Tezos < Formula
   keg_only "This formula should only be used for stkr-token-cli, and should not conflict with regular tezos-client"
 
   patch do
-    # TODO: put patch in public place
-    url "https://raw.githubusercontent.com/serokell/tezos-btc/master/patch/tezos-client.patch?token=AGDS6I6OROCEN4FFZ7CG7HC6ODQ4K"
+    url "https://gist.githubusercontent.com/gpevnev/3b08d7755dae17b3e5bff718dd9320af/raw/73cad4c677d85608a28cc1a6f3dbcf33c0a18ed8/tezos-client-sign.patch"
     sha256 "8d34d1daf5963c0630b6675b500e71e9570f058380e19530f0198431e00747f4"
   end 
 
-  # TODO update bottle
   bottle do
-    root_url "https://dl.bintray.com/michaeljklein/bottles-tq"
+    root_url "https://gpevnev-org.bintray.com/bottles-stakerdao"
     cellar :any
-    sha256 "1ea43b32da55dfcbc3d7537b09e2144495f4fcab268587af11f472913b82ae15" => :mojave
-    sha256 "01e239b1e169612516bead411a102dc805fc04d79b334be9055edf721b1a4477" => :x86_64_linux
+    rebuild 1
+    sha256 "f81f3197feaa000c259e9ef65b60a1d15107d0ebe472969c4c9e4dfdf9d9b322" => :catalina
   end
 
   build_dependencies = %w[opam pkg-config rsync wget]
