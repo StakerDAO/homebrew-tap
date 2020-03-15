@@ -1,10 +1,4 @@
 class TezosClientPatched < Formula
-  @all_bins = []
-
-  class << self
-    attr_accessor :all_bins
-  end
-
   desc "Platform for distributed consensus with meta-consensus capability"
   homepage "https://gitlab.com/tezos/tezos"
 
@@ -52,25 +46,12 @@ class TezosClientPatched < Formula
     system ["eval $(opam env)", "make", "make install"].join(" && ")
 
     bin.mkpath # ensure bin folder exists
-    executable_file_paths = Dir["./*"].select do |file_path|
-      File.file?(file_path) && File.executable?(file_path)
-    end
-    executable_file_paths.each do |file_path|
-      file_name = File.basename file_path
-      self.class.all_bins << file_name
-      bin.install file_name
-    end
-
-    system prepend_path_in_profile("~/tezos")
+    bin.install "tezos-client"
 
     bash_completion.install "src/bin_client/bash-completion.sh"
   end
 
   test do
     system "#{bin}/tezos-client", "man"
-
-    self.class.all_bins.each do |file_name|
-      assert_predicate bin/file_name, :exist?
-    end
   end
 end
