@@ -18,8 +18,6 @@ class StkrTokenCli < Formula
 
   resource "mac-stack" do
     url "https://github.com/commercialhaskell/stack/releases/download/v1.9.3/stack-1.9.3-osx-x86_64.tar.gz"
-    # url "https://github.com/commercialhaskell/stack/releases/download/v2.1.3/stack-2.1.3-osx-x86_64.tar.gz"
-    # sha256 "84b05b9cdb280fbc4b3d5fe23d1fc82a468956c917e16af7eeeabec5e5815d9f"
     sha256 "05ff745b88fb24911aa6b7e2b2e7098f04c2fdf769f00f921d44ffecbc417bc2"
   end
 
@@ -27,8 +25,6 @@ class StkrTokenCli < Formula
   depends_on "libsodium"
 
   def install
-    ENV.deparallelize
-
     (buildpath/"mac-stack").install resource("mac-stack")
     ENV.append_path "PATH", "#{buildpath}/mac-stack"
 
@@ -47,7 +43,7 @@ class StkrTokenCli < Formula
   end
 
   test do
-    # assert_predicate bin/"stkr-token-cli", :exist?
+    assert_predicate bin/"stkr-token-cli", :exist?
     # system "cd stkr-token && stack test"
   end
 end

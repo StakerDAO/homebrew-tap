@@ -18,8 +18,8 @@ class TezosClientPatched < Formula
   bottle do
     root_url "https://gpevnev-org.bintray.com/bottles-stakerdao"
     cellar :any
-    rebuild 1
-    sha256 "f81f3197feaa000c259e9ef65b60a1d15107d0ebe472969c4c9e4dfdf9d9b322" => :catalina
+    rebuild 2
+    sha256 "b1e99b2f65204615377eb9e571df8af62863f7d08207e1f0ba8875c97fc7bac9" => :catalina
   end
 
   build_dependencies = %w[opam pkg-config rsync wget]
