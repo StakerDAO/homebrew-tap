@@ -12,8 +12,8 @@ class StkrTokenCli < Formula
   bottle do
     root_url "https://gpevnev-org.bintray.com/bottles-stakerdao"
     cellar :any
-    rebuild 1
-    sha256 "cba76fdf28eb4d9a74713e90042d7b89d348b1b8842b14e97675b5799364899c" => :catalina
+    rebuild 2
+    sha256 "d1813f486b495a8cbf6d809aba4d4938c995f45e91209c3cca38700cbb4cfc32" => :catalina
   end
 
   resource "mac-stack" do
