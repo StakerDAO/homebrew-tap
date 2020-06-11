@@ -16,7 +16,7 @@ class TezosClientPatched < Formula
   end 
 
   bottle do
-    root_url "https://gpevnev-org.bintray.com/bottles-stakerdao"
+    root_url "https://github.com/StakerDAO/staker-dao/releases/download/0.6"
     cellar :any
     rebuild 2
     sha256 "b1e99b2f65204615377eb9e571df8af62863f7d08207e1f0ba8875c97fc7bac9" => :catalina

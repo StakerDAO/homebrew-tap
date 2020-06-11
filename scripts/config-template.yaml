@@ -2,4 +2,8 @@ envTezosClientCmd: "_TEZOS_CLIENT_PATH"
 envNodeAddr:
   naHost: "carthage.testnet.tezos.serokell.team"
   naPort: 8732
+envSecure: false
+envVerbosity: "Silent"
+
+
 

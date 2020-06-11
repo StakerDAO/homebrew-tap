@@ -3,17 +3,15 @@ class StkrTokenCli < Formula
   desc "Haskell to Michelson for Lorentz contract parameters"
   homepage "https://github.com/tqtezos/lorentz-contract-param"
 
-  url "https://github.com/serokell/staker-dao.git",
-      :revision => "349a128d6f65c8526411398b845a5df29d8f6272"
-  version "0.5"
+  url "https://github.com/StakerDAO/staker-dao.git"
+  version "0.6"
 
   head "https://github.com/serokell/staker-dao.git", :branch => "master"
-  
+
   bottle do
-    root_url "https://gpevnev-org.bintray.com/bottles-stakerdao"
+    root_url "https://github.com/StakerDAO/staker-dao/releases/download/0.6"
     cellar :any
-    rebuild 2
-    sha256 "d1813f486b495a8cbf6d809aba4d4938c995f45e91209c3cca38700cbb4cfc32" => :catalina
+    sha256 "053f695d7068e8aacef50a5515b68d64603251476dd97aacbdde486a47240c64" => :catalina
   end
 
   resource "mac-stack" do
